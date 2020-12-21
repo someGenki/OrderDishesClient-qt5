@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>static/bilibili.ico</file>
+        <file>static/wallpaper.ico</file>
+    </qresource>
+</RCC>
