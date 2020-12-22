@@ -5,13 +5,15 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG += c++11
 
 SOURCES += \
+    MyUtil.cpp \
     main.cpp \
     mainwindow.cpp \
-    myUtil.cpp
+    menu.cpp
 
 HEADERS += \
+    MyUtil.h \
     mainwindow.h \
-    myUtil.h
+    menu.h
 
 FORMS += \
     mainwindow.ui

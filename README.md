@@ -37,9 +37,7 @@ create table IF NOT EXISTS business_data(
 
 ````
 
-作品介绍
-
-
+ 
 
 
 
@@ -48,4 +46,6 @@ create table IF NOT EXISTS business_data(
 1. Qt教程，Qt5编程入门教程 http://c.biancheng.net/qt/
 2. Qt中文文档 https://www.qtdoc.cn/
 3. Qt5之使用sqlite3数据库  https://blog.csdn.net/hk_5788/article/details/80959076
+4. C++引用10分钟入门教程 http://c.biancheng.net/view/2251.html
+5. 
 

@@ -2,8 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QSqlQuery>
 #include <QtDebug>
+#include <QString>
+#include "menu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,10 +21,19 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+#include "menu.h"
+
+
+private slots:
+    void on_seatConfirmBtn_clicked();
+
+    void on_payBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
     QSqlQuery sql_query;
+    bool used=false; // 使用状态 默认未使用
+    void    iniTree();//目录树初始化
 };
 
 #endif // MAINWINDOW_H

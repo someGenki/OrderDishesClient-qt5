@@ -2,10 +2,16 @@
     <qresource prefix="/">
         <file>static/bilibili.ico</file>
         <file>static/wallpaper.ico</file>
-        <file>static/built-in2.jpg</file>
-        <file>static/red_burn_meat.jpg</file>
         <file>static/shy.jpg</file>
         <file>static/tables.sql</file>
-        <file>static/built-in.jpg</file>
+        <file>foodPic/1.jpg</file>
+        <file>foodPic/2.jpg</file>
+        <file>foodPic/3.jpg</file>
+        <file>foodPic/4.jpg</file>
+        <file>foodPic/5.jpg</file>
+        <file>static/insert.ini</file>
+        <file>static/unknown.jpg</file>
+        <file>static/qq.ico</file>
+        <file>static/steam.ico</file>
     </qresource>
 </RCC>
