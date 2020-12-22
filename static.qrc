@@ -2,5 +2,10 @@
     <qresource prefix="/">
         <file>static/bilibili.ico</file>
         <file>static/wallpaper.ico</file>
+        <file>static/built-in2.jpg</file>
+        <file>static/red_burn_meat.jpg</file>
+        <file>static/shy.jpg</file>
+        <file>static/tables.sql</file>
+        <file>static/built-in.jpg</file>
     </qresource>
 </RCC>

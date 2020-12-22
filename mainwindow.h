@@ -2,10 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSqlQuery>
+#include <QtDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
 
 class MainWindow : public QMainWindow
 {
@@ -18,7 +21,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-
-
+    QSqlQuery sql_query;
 };
+
 #endif // MAINWINDOW_H
