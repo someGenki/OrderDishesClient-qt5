@@ -8,15 +8,18 @@
 class Menu
 {
 public:
-    Menu();
-   // enum Type{STAPLE_FOOD=1,SNACK,DESSERT,SOUP};
-    int id;
-    QString name;
-    QString price;
-    QByteArray pic;
-    int type;
-    static Menu* getMenusFromDB(QSqlQuery);
-    QString toString();
+Menu();
+Menu(Menu *_menu);
+// enum Type{STAPLE_FOOD=1,SNACK,DESSERT,SOUP};
+int id;
+QString name;
+QString price;
+QByteArray pic;
+int type;
+static Menu* getMenusFromDB(QSqlQuery);
+QString toString();
 };
+Q_DECLARE_METATYPE(Menu)
+// QVariant存储自定义类型↑
 
 #endif // MENU_H

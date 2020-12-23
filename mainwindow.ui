@@ -13,8 +13,23 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QWidget" name="widget" native="true">
       <layout class="QGridLayout" name="gridLayout">
@@ -71,6 +86,10 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #FFFFFF, stop:1 #ECE9E6  );
+border-radius:5%;</string>
+               </property>
                <item>
                 <property name="text">
                  <string notr="true">已点菜单🍽</string>
@@ -90,7 +109,7 @@
                </item>
                <item>
                 <property name="text">
-                 <string>餐位2￥/位</string>
+                 <string>0_餐位费 2￥/ 桌</string>
                 </property>
                 <property name="checkState">
                  <enum>Checked</enum>
@@ -128,8 +147,11 @@
              </item>
              <item>
               <widget class="QPushButton" name="deleteBtn">
+               <property name="styleSheet">
+                <string notr="true">padding:8px;background:rgb(166,169,173);color:white;border-radius:7px;</string>
+               </property>
                <property name="text">
-                <string>删除已选</string>
+                <string>删除未选</string>
                </property>
               </widget>
              </item>
@@ -148,6 +170,9 @@
              </item>
              <item>
               <widget class="QPushButton" name="okBtn">
+               <property name="styleSheet">
+                <string notr="true">padding:8px;background:rgb(166,169,173);color:white;border-radius:7px;</string>
+               </property>
                <property name="text">
                 <string>确认操作</string>
                </property>
@@ -193,13 +218,19 @@
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: #aaaaff;</string>
+          <string notr="true"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QTreeWidget" name="menuTree">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #ECE9E6, stop:1 #FFFFFF  );
+border:1px solid gray;
+border-bottom-right-radius:5%;
+border-bottom-left-radius:5%;</string>
             </property>
             <column>
              <property name="text">
@@ -215,6 +246,23 @@
                <red>255</red>
                <green>170</green>
                <blue>127</blue>
+              </color>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>价格</string>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="background">
+              <color>
+               <red>255</red>
+               <green>200</green>
+               <blue>123</blue>
               </color>
              </property>
             </column>
@@ -295,7 +343,7 @@
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">border:1px solid gray;</string>
+                <string notr="true">border:1px solid gray;border-radius:5%;</string>
                </property>
                <property name="text">
                 <string>预览图</string>
@@ -328,17 +376,55 @@
                </property>
                <layout class="QGridLayout" name="gridLayout_2">
                 <item row="0" column="0">
-                 <widget class="QProgressBar" name="progressBar">
-                  <property name="minimumSize">
+                 <spacer name="horizontalSpacer_9">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
                    <size>
-                    <width>50</width>
-                    <height>0</height>
+                    <width>40</width>
+                    <height>20</height>
                    </size>
                   </property>
-                  <property name="value">
-                   <number>24</number>
+                 </spacer>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="addToOrderBtn">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">padding:8px;background:rgb(102,177,255);color:white;border-radius:5px;</string>
+                  </property>
+                  <property name="text">
+                   <string>添加到右侧菜单栏&gt;&gt;&gt;</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>false</bool>
+                  </property>
+                  <property name="autoDefault">
+                   <bool>false</bool>
+                  </property>
+                  <property name="default">
+                   <bool>false</bool>
+                  </property>
+                  <property name="flat">
+                   <bool>false</bool>
                   </property>
                  </widget>
+                </item>
+                <item row="0" column="2">
+                 <spacer name="horizontalSpacer_10">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -360,6 +446,9 @@
         <height>50</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <spacer name="horizontalSpacer_4">
@@ -376,8 +465,16 @@
        </item>
        <item>
         <widget class="QPushButton" name="seatConfirmBtn">
+         <property name="styleSheet">
+          <string notr="true">
+padding:8px;background-color:rgb(102,177,255);color:white;border-radius:7px;
+</string>
+         </property>
          <property name="text">
           <string>入座确认</string>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -396,6 +493,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="orderConfirmBtn">
+         <property name="styleSheet">
+          <string notr="true">padding:8px;background:rgb(102,177,255);color:white;border-radius:7px;</string>
+         </property>
          <property name="text">
           <string>确认点菜</string>
          </property>
@@ -416,6 +516,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="callWaiterBtn">
+         <property name="styleSheet">
+          <string notr="true">padding:8px;background:rgb(102,177,255);color:white;border-radius:7px;</string>
+         </property>
          <property name="text">
           <string>呼叫服务员</string>
          </property>
@@ -436,8 +539,11 @@
        </item>
        <item>
         <widget class="QPushButton" name="payBtn">
+         <property name="styleSheet">
+          <string notr="true">padding:8px;background:rgb(102,177,255);color:white;border-radius:7px;</string>
+         </property>
          <property name="text">
-          <string>结账</string>
+          <string>结账付款</string>
          </property>
         </widget>
        </item>
@@ -465,7 +571,7 @@
      <x>0</x>
      <y>0</y>
      <width>1248</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_F">
