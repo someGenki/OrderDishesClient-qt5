@@ -394,7 +394,7 @@ border-bottom-left-radius:5%;</string>
                    <bool>false</bool>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding:8px;background:rgb(102,177,255);color:white;border-radius:5px;</string>
+                   <string notr="true">padding:8px;background:rgb(68,185,186);color:white;border-radius:5px;</string>
                   </property>
                   <property name="text">
                    <string>添加到右侧菜单栏&gt;&gt;&gt;</string>
