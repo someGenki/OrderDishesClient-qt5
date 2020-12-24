@@ -45,6 +45,8 @@ void on_seatConfirmBtn_clicked();
 // 点菜完毕确认
 void on_orderConfirmBtn_clicked();
 
+void on_action_triggered();
+
 private:
 Ui::MainWindow *ui;
 QSqlQuery sql_query;

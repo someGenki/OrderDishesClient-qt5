@@ -22,9 +22,16 @@ MainWindow::~MainWindow()
 // 初始化窗口
 void MainWindow::init()
 {
+    if (timer!=nullptr&&timer->isActive())
+        timer->stop();
+    this->ui->addToOrderBtn->setStyleSheet("padding:8px;background:#028090;color:#B5838D;border-radius:5px;");
     this->ui->statusbar->showMessage("当前没有客户使用  等待中");
-    setPicToPicShowLableAdaptive(*new QPixmap(":/static/unknown.jpg"));
+    this->ui->addToOrderBtn->setDisabled(true);
     this->money = 2;
+    this->used = false;
+    setPicToPicShowLableAdaptive(*new QPixmap(":/static/unknown.jpg"));
+
+
 }
 //把当前选中的Menu项添加到右侧已点列表
 void MainWindow::addToOrderBtn1_clicked()
@@ -121,6 +128,7 @@ void MainWindow::on_seatConfirmBtn_clicked()
         timer->start(1000); //每隔1000ms发送timeout的信号触发状态栏更新
         connect(timer, SIGNAL(timeout()), this, SLOT(time_update()));
         this->used = true;
+        this->ui->addToOrderBtn->setStyleSheet("padding:8px;background:#02C39A;color:white;border-radius:5px;");
     }
 }
 
@@ -141,19 +149,15 @@ void MainWindow::on_payBtn_clicked()
             QString dlgTitle = "对话框";
             QString strInfo = "正在通知服务员过来结账!";
             QMessageBox::information(this, dlgTitle, strInfo);
-            this->used = false;
             // 收尾工作
             disconnect(timer, SIGNAL(timeout()), this, SLOT(time_update()));
-            if (used == true) ui->addToOrderBtn->setEnabled(false);
+            // clear ordered_list
             int cnt = ui->order_list->count();//项个数
             for (int i = 2; i < cnt; i++) {
-                QListWidgetItem *aItem = ui->order_list->item(i);
+                QListWidgetItem *aItem = ui->order_list->item(2);
                 delete  aItem;
             }
-            if (timer->isActive())
-                timer->stop();
             init();
-            setPicToPicShowLableAdaptive(*new QPixmap(":/static/unknown.jpg"));
         }
     }
 }
@@ -205,6 +209,14 @@ void MainWindow::on_orderConfirmBtn_clicked()
 {
     QString dlgTitle = "对话框";
     QString strInfo = "后厨已经收到本次订单了";
+
+    QMessageBox::information(this, dlgTitle, strInfo);
+}
+
+void MainWindow::on_action_triggered()
+{
+    QString dlgTitle = "About";
+    QString strInfo = "Qt 5.14.c++11 sqlite3 \n by Lyq";
 
     QMessageBox::information(this, dlgTitle, strInfo);
 }

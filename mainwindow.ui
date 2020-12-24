@@ -87,7 +87,7 @@
                 </sizepolicy>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #FFFFFF, stop:1 #ECE9E6  );
+                <string notr="true">
 border-radius:5%;</string>
                </property>
                <item>
@@ -571,7 +571,7 @@ padding:8px;background-color:rgb(102,177,255);color:white;border-radius:7px;
      <x>0</x>
      <y>0</y>
      <width>1248</width>
-     <height>23</height>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_F">
